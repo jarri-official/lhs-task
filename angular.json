@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "lufthansa-task": "apps/lufthansa-task",
+    "lufthansa-task-e2e": "apps/lufthansa-task-e2e"
+  }
+}
