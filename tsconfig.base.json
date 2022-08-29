@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@lufthansa-task/data-source": ["libs/data-source/src/index.ts"],
+      "@lufthansa-task/layout": ["libs/layout/src/index.ts"],
+      "@movie/features/*": ["apps/lufthansa-task/src/app/features/*"],
+      "@movie/shared/*": ["apps/lufthansa-task/src/app/shared/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
