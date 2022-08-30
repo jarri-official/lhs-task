@@ -1,0 +1,10 @@
+@import "libs/styles/mixins";
+@import "libs/styles/colors";
+
+/**
+ * Directives do not have own styling so this is kind of hacky way to style this input.
+ */
+.lufthansa-task-input {
+  @include inputStyles;
+  background-color: $colorBackgroundAccent;
+}

@@ -12,6 +12,6 @@ export class MovieListDataService {
 
   public getMovieList(): Observable<Movie[]> {
     return this.apiService.getDataSource()
-      .pipe(delay(1000));
+      .pipe(delay(500));
   }
 }

@@ -1,15 +1,17 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { Movie } from '@lufthansa-task/models';
+import { GenreType, Movie } from '@lufthansa-task/models';
 
-import { setMovieListAction, unsetMovieListAction } from './actions';
+import { setGenreListAction, setMovieListAction, unsetMovieListAction } from './actions';
 
 export interface MovieListFeatureState {
   list: Movie[];
+  genres: GenreType[]
 }
 
 const initialState: MovieListFeatureState = {
-  list: []
+  list: [],
+  genres: []
 };
 
 export const reducer = createReducer(
@@ -23,5 +25,10 @@ export const reducer = createReducer(
   on(unsetMovieListAction, (state: MovieListFeatureState) => ({
     ...state,
     ...initialState
+  })),
+
+  on(setGenreListAction, (state: MovieListFeatureState, {genres}: {genres: GenreType[]}) => ({
+    ...state,
+    genres
   }))
 );

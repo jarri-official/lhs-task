@@ -1,0 +1,29 @@
+<form
+  [formGroup]='formGroup'
+  class='search-form'
+>
+  <input
+    type='text'
+    formControlName='name'
+    lufthansaTaskInput
+    placeholder='Search by name...'
+  >
+
+  <div
+    class='genres'
+    formGroupName='genres'
+  >
+    <div class='genres-label'>Genre:</div>
+    <label *ngFor='let genre of genreList'>
+      <input
+        type='checkbox'
+        [formControlName]='genre'
+      >
+      <span>{{genre}}</span>
+    </label>
+  </div>
+
+  <div class='spancer'>|</div>
+
+  <lufthansa-task-button (clicked)='onResetClick()'>Reset</lufthansa-task-button>
+</form>

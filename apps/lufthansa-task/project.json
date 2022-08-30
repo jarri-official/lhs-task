@@ -18,7 +18,10 @@
           "apps/lufthansa-task/src/assets",
           "apps/lufthansa-task/src/data-source"
         ],
-        "styles": ["apps/lufthansa-task/src/styles.scss"],
+        "styles": [
+          "node_modules/normalize.css/normalize.css",
+          "apps/lufthansa-task/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

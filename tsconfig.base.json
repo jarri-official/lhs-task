@@ -10,30 +10,19 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lufthansa-task/api": [
-        "libs/api/src/index.ts"
-      ],
-      "@lufthansa-task/data-source": [
-        "libs/data-source/src/index.ts"
-      ],
-      "@lufthansa-task/layout": [
-        "libs/layout/src/index.ts"
-      ],
-      "@lufthansa-task/models": [
-        "libs/models/src/index.ts"
-      ]
+      "@lufthansa-task/api": ["libs/api/src/index.ts"],
+      "@lufthansa-task/data-source": ["libs/data-source/src/index.ts"],
+      "@lufthansa-task/forms": ["libs/forms/src/index.ts"],
+      "@lufthansa-task/layout": ["libs/layout/src/index.ts"],
+      "@lufthansa-task/models": ["libs/models/src/index.ts"],
+      "@lufthansa-task/styles": ["libs/styles/src/index.ts"],
+      "@lufthansa-task/ui": ["libs/ui/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

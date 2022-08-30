@@ -1,22 +1,18 @@
-<div>
-  <a routerLink='/'>Navigate back to movie list</a>
-</div>
-
 <ng-container *ngIf='movieDetails$ | async as movieDetails; else loading'>
-  <div>
-    <img
-      [src]='"/assets/images/movie-covers/" + movieDetails.img'
-      [alt]='"Poster for " + movieDetails.name'
-    >
-  </div>
-  <div>
-    <h1>{{movieDetails.name}}</h1>
-    <p>{{movieDetails.genres.join(', ')}}</p>
-    <p>Duration: {{movieDetails.length}}, Rating: {{movieDetails.rate}}</p>
-    <p>{{movieDetails.description}}</p>
+  <div class='row'>
+    <div class='poster'>
+      <lufthansa-task-poster [movieDetails]='movieDetails'></lufthansa-task-poster>
+
+    </div>
+    <div class='description'>
+      <h1>{{movieDetails.name}}</h1>
+      <p>{{movieDetails.genres.join(', ')}}</p>
+      <p>Rating: {{movieDetails.rate}} / 10, Duration: {{movieDetails.length}}</p>
+      <p>{{movieDetails.description}}</p>
+    </div>
   </div>
 </ng-container>
 
 <ng-template #loading>
-  Loading...
+  <lufthansa-task-loader></lufthansa-task-loader>
 </ng-template>

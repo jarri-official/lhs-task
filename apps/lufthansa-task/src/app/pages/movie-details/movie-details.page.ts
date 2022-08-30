@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MovieDetailsModule } from '../../features/movie-details';
 
@@ -8,7 +9,8 @@ import { MovieDetailsModule } from '../../features/movie-details';
   standalone: true,
   imports: [
     CommonModule,
-    MovieDetailsModule
+    MovieDetailsModule,
+    RouterModule
   ],
   templateUrl: './movie-details.page.html',
   styleUrls: ['./movie-details.page.scss'],

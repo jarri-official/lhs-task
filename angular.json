@@ -3,8 +3,11 @@
   "version": 2,
   "projects": {
     "api": "libs/api",
+    "forms": "libs/forms",
     "layout": "libs/layout",
     "lufthansa-task": "apps/lufthansa-task",
-    "models": "libs/models"
+    "models": "libs/models",
+    "styles": "libs/styles",
+    "ui": "libs/ui"
   }
 }

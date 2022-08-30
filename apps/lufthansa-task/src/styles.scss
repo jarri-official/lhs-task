@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+@import "libs/styles/theme";
+
+/**
+ * This stylesheet is imported here but this is not a proper, valid place to be. Input and Select should be wrapped
+ * inside of the form field component (like in Angular Material), and this styles should be imported into them. But for
+ * simplifying reasons I did put them right there.
+ */
+@import "libs/forms/forms-styles";

@@ -9,3 +9,8 @@ export const selectMovieList = createSelector(
   selectFeature,
   (state: MovieListFeatureState) => state.list
 );
+
+export const selectGenreList = createSelector(
+  selectFeature,
+  (state: MovieListFeatureState) => state.genres
+);

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+
+import { UiModule } from '@lufthansa-task/ui';
 
 import { MovieDetailsComponent } from './components/movie-details.component';
 import { featureReducerKey } from './store/feature-reducer-key.constant';
@@ -17,9 +18,9 @@ import { MovieDetailsDataService } from './services/movie-details-data.service';
   ],
   imports: [
     CommonModule,
-    RouterModule,
     StoreModule.forFeature(featureReducerKey, reducer),
-    EffectsModule.forFeature([MovieDetailsStoreEffects])
+    EffectsModule.forFeature([MovieDetailsStoreEffects]),
+    UiModule
   ],
   exports: [
     MovieDetailsComponent

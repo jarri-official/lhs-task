@@ -1,0 +1,14 @@
+@import "libs/styles/colors";
+@import "libs/styles/mixins";
+
+button {
+  @include inputStyles;
+  background-color: $colorAccent;
+  color: $colorFontAccent;
+  font: {
+    size: 14px;
+    weight: 900;
+  }
+  text-transform: uppercase;
+  cursor: pointer;
+}

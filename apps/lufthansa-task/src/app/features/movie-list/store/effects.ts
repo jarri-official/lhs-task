@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, switchMap } from 'rxjs';
 
-import { Movie } from '@lufthansa-task/models';
+import { GenreType, Movie } from '@lufthansa-task/models';
 
-import { loadMovieListAction, setMovieListAction } from './actions';
+import { loadMovieListAction, setGenreListAction, setMovieListAction } from './actions';
 import { MovieListDataService } from '../services/movie-list-data.service';
 
 @Injectable()
@@ -13,7 +13,19 @@ export class MovieListStoreEffects {
     this.actions$.pipe(
       ofType(loadMovieListAction),
       switchMap(() => this.movieListDataService.getMovieList()),
-      map((list: Movie[]) => setMovieListAction({list}))
+      map((list: Movie[]) => setMovieListAction({ list }))
+    )
+  );
+
+  public generateGenresList$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(setMovieListAction),
+      map(({ list }: { list: Movie[] }) => {
+        return list.reduce((genres: GenreType[], movie: Movie) => {
+          return genres.concat(movie.genres.filter(((genre: GenreType) => genres.indexOf(genre) < 0)));
+        }, []);
+      }),
+      map((genres: GenreType[]) => setGenreListAction({genres}))
     )
   );
 

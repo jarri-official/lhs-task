@@ -1,0 +1,9 @@
+@mixin inputStyles() {
+  height: 28px;
+  border: {
+    style: none;
+    radius: 3px;
+  }
+  padding: 0 8px;
+  margin: 0;
+}

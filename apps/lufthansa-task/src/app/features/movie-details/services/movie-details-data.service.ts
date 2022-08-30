@@ -16,7 +16,7 @@ export class MovieDetailsDataService {
         map((movieList: Movie[]) => {
           return movieList.find((movie: Movie) => movie.key === key) || null;
         }),
-        delay(1000)
+        delay(500) // Why this delay? To show loader and make a feel that app is really loading something
       )
   }
 }
