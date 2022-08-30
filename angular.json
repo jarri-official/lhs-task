@@ -2,7 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api": "libs/api",
     "layout": "libs/layout",
-    "lufthansa-task": "apps/lufthansa-task"
+    "lufthansa-task": "apps/lufthansa-task",
+    "models": "libs/models"
   }
 }

@@ -1,4 +1,4 @@
-import { GenreType } from '@movie/shared/enums/genre-type.enum';
+import { GenreType } from '../enums';
 
 export interface Movie {
   id: number;

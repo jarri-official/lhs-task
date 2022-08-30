@@ -1,0 +1,11 @@
+<p>movie-list feature works!</p>
+
+<ng-container *ngIf='movieList$ | async as movieList; else loading'>
+  <div *ngFor='let movie of movieList'>
+    <a [routerLink]='"/movie/" + movie.key'>{{movie.name}}</a>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  Loading...
+</ng-template>

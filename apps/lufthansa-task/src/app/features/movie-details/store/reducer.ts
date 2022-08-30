@@ -1,15 +1,27 @@
-import { createReducer } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 
-import { Movie } from '@movie/shared/models/movie.model';
+import { Movie } from '@lufthansa-task/models';
+
+import { setMovieDetailsAction, unsetMovieDetailsAction } from './actions';
 
 export interface MovieDetailsFeatureState {
-  movieDetails: Movie | null;
+  movie: Movie | null;
 }
 
-export const initialState: MovieDetailsFeatureState = {
-  movieDetails: null
+const initialState: MovieDetailsFeatureState = {
+  movie: null
 };
 
 export const reducer = createReducer(
-  initialState
+  initialState,
+
+  on(setMovieDetailsAction, (state: MovieDetailsFeatureState, {movie}: {movie: Movie}) => ({
+    ...state,
+    movie
+  })),
+
+  on(unsetMovieDetailsAction, (state: MovieDetailsFeatureState) => ({
+    ...state,
+    ...initialState
+  }))
 );

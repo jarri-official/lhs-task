@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MovieDetailsModule } from '@movie/features/movie-details';
+import { MovieDetailsModule } from '../../features/movie-details';
 
 @Component({
   selector: 'lufthansa-task-movie-details-page',
