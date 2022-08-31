@@ -1,55 +1,20 @@
-# Movies Application
-## Scenario:
+# Movies Collection Application
 
-You have a great idea for a new movies collection application. Your new site will be based on angular application which it will contain the below features:
+This project was generated using [Nx](https://nx.dev).
 
-### Application should contain the below features:
+The concept behind this application is to show how to approach different solutions in Angular application. This
+application is about a movie collection, with the ability to browse and search through movies. I have used NgRX for
+state management which provides app scalability. Code is well separated and responsibilities of features are limited to
+their task. Some solutions sometimes might be little bit overkill but this app is about showing various solutions.
 
-- **Movies List**
-  - List Movies.
-  - Search.
-  - Clicking on a particular movie will redirect you to the selected &#39;movie detail&#39; page.
-- **Movie detail**
-  - Show selected movie detail information.
-  - Navigate back to &#39;movie list&#39;.
+## How to run this app
 
-Pages should have proper urls and navigation should work as expected:
-  * using the back and forward button of the browser should take to the correct page
-  * reloading the current page should work as expected
+Install all dependencies using `npm install` or `yarn`.
 
-#### Technologies required
+## Development server
 
-- [Angular](https://angular.io/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Rxjs](https://github.com/ReactiveX/rxjs)
-- [NGRx](https://ngrx.io/) for state management
+Run `npm run start` or `yarn start` for a dev server. Navigate to http://localhost:4200/.
 
-You may use any 3rd party libraries which can facilitate your development.
+## Preview
 
-#### Extra Credit
-
-- Filter by Genre.
-- Unit tests.
-- Polished design.
-- Responsive design.
-
-If you get the demo in good shape and have extra time, add your own flair and features.
-
-#### Content
-
-- Together with this readme file, you will find ` **content** ` folder which contains helpful content for your application:
-  - Movies mock data.
-  - Movies cover images.
-  - Basic movies model.
-- Feel free to modify movies content.
-- Feel free to modify movies model file.
-
-#### Deliverable
-
-- Provide a working application.
-- Provide source code in a public Git, Stash or Bitbucket repository.
-- Provide markdown readme file.
-  - General information about the app.
-  - Provide steps how to build/launch your application.
-
-Good luck and have fun!
+Working application is also available here http://lufthansa.loho.pl/.
