@@ -1,0 +1,9 @@
+<ng-container *ngIf='movieDetails'>
+  <a
+    class='movie-item-container'
+    [routerLink]='"/movie/" + movieDetails.key'
+  >
+    <lufthansa-task-poster [movieDetails]='movieDetails'></lufthansa-task-poster>
+    <p class='movie-title'>{{movieDetails.name}}</p>
+  </a>
+</ng-container>

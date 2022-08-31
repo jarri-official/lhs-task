@@ -1,13 +1,17 @@
 <ng-container *ngIf='movieList$ | async as movieList; else loading'>
   <lufthansa-task-movie-list-search [genreList]='genreList$ | async'></lufthansa-task-movie-list-search>
 
-  <ng-container *ngIf='movieList | movieListFilter: (searchCriteria$ | async) as filteredMovies'>
-    <div *ngFor='let movie of filteredMovies'>
-      <a [routerLink]='"/movie/" + movie.key'>{{movie.name}}</a>
-    </div>
+  <div
+    class='movie-list'
+    *ngIf='movieList | movieListFilter: (searchCriteria$ | async) as filteredMovies'
+  >
+    <lufthansa-task-movie-list-item
+      *ngFor='let movie of filteredMovies'
+      [movieDetails]='movie'
+    ></lufthansa-task-movie-list-item>
 
     <div *ngIf='!filteredMovies.length'>There is no movies for provided search criteria</div>
-  </ng-container>
+  </div>
 </ng-container>
 
 <ng-template #loading>

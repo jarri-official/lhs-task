@@ -10,4 +10,14 @@
 
 .poster {
   margin-right: 15px;
+
+  ::ng-deep {
+    img {
+      width: 100px;
+
+      @media (min-width: 650px) {
+        width: auto;
+      }
+    }
+  }
 }

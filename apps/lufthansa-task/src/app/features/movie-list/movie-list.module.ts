@@ -14,16 +14,21 @@ import { featureReducerKey } from './store/feature-reducer-key.constant';
 import { reducer } from './store/reducer';
 import { MovieListSearchModule } from '../movie-list-search/movie-list-search.module';
 import { MovieListFilterPipe } from './pipes/movie-list-filter.pipe';
+import { MovieListItemComponent } from './components/movie-list-item/movie-list-item.component';
 
 @NgModule({
-  declarations: [MovieListComponent, MovieListFilterPipe],
+  declarations: [
+    MovieListComponent,
+    MovieListFilterPipe,
+    MovieListItemComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
     StoreModule.forFeature(featureReducerKey, reducer),
     EffectsModule.forFeature([MovieListStoreEffects]),
     UiModule,
-    MovieListSearchModule
+    MovieListSearchModule,
   ],
   exports: [MovieListComponent],
   providers: [
