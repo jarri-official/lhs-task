@@ -1817,6 +1817,13 @@
   dependencies:
     tslib "^2.0.0"
 
+"@ngrx/router-store@^14.3.0":
+  version "14.3.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-14.3.0.tgz#9d73cf5ceb8e7ed5ad5e4c528c2c70eca249a810"
+  integrity sha512-tizy5KvlVFX+6YyLAfjmDfGvCWgyw1HiycwZ635RxTGXdVpdbsVUUiHkstsAMjOhvSy+sDqhKPHMpP5mULySLA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/store-devtools@^14.3.0":
   version "14.3.0"
   resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-14.3.0.tgz#aa39fd6334547970902c1e38b2d7cd3fe6bba876"
@@ -7439,6 +7446,11 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+ng-mocks@^14.2.0:
+  version "14.2.0"
+  resolved "https://registry.yarnpkg.com/ng-mocks/-/ng-mocks-14.2.0.tgz#5ba7da9676dab44c5838d853a7b879317879c21b"
+  integrity sha512-WukgNOoTWTbM0eawuApyfJJ9H2iJhQghW4eCcNUmpgH7pXIWrc3xNmB5t73Jhlo8kLamqOttttz6R39KzE3kAQ==
 
 nice-napi@^1.0.2:
   version "1.0.2"

@@ -1,23 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { filter, Observable } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { filter, map, Observable } from 'rxjs';
 
 import { Movie } from '@lufthansa-task/models';
 
 import { MovieDetailsFeatureState } from './reducer';
 import { loadMovieDetailsAction, unsetMovieDetailsAction } from './actions';
-import { selectMovieDetails } from './selectors';
+import { selectMovieDetails, selectRouteParams } from './selectors';
+import { movieDetailsRouterParamKey } from '../constants/movie-details-router-param-key.constant';
+import { Params } from '@angular/router';
 
 @Injectable()
 export class MovieDetailsStoreFacade {
   public movieDetails$: Observable<Movie> = this.store.select(selectMovieDetails)
     .pipe(filter(Boolean));
 
+  public routeParamsKey$: Observable<string> = this.store.pipe(select(selectRouteParams))
+    .pipe(map((routeParams: Params) => routeParams[movieDetailsRouterParamKey]));
+
   constructor(private store: Store<MovieDetailsFeatureState>) {
   }
 
-  public loadMovieDetails(key: string): void {
-    this.store.dispatch(loadMovieDetailsAction({ key }));
+  public loadMovieDetails(): void {
+    this.store.dispatch(loadMovieDetailsAction());
   }
 
   public unsetMovieDetails(): void {

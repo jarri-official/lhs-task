@@ -10,6 +10,9 @@ export class MovieListDataService {
   constructor(private apiService: ApiService) {
   }
 
+  /**
+   * This delay adds feel of that app is really loading something.
+   */
   public getMovieList(): Observable<Movie[]> {
     return this.apiService.getDataSource()
       .pipe(delay(500));

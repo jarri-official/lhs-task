@@ -26,22 +26,11 @@ export class MovieListSearchComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    if (this.genreList && this.genreList.length) {
-      this.genreList.forEach((genre: GenreType) => this.genresFormGroup.addControl(genre, new FormControl(false)));
-    }
+    this.setupGenreFormControls();
 
-    this.movieListSearchStoreFacade.searchCriteria$
-      .pipe(
-        take(1),
-        takeUntil(this.destroySubject)
-      )
-      .subscribe((searchCriteria: MovieListSearchFormData) => this.formGroup.patchValue(searchCriteria));
+    this.patchSearchFormWithValuesFromStore();
 
-    this.formGroup.valueChanges
-      .pipe(
-        takeUntil(this.destroySubject)
-      )
-      .subscribe((searchCriteria: MovieListSearchFormData) => this.movieListSearchStoreFacade.setSearchCriteria(searchCriteria));
+    this.handleFormValueChanges();
   }
 
   public ngOnDestroy(): void {
@@ -54,5 +43,36 @@ export class MovieListSearchComponent implements OnInit, OnDestroy {
 
   private get genresFormGroup(): FormGroup {
     return this.formGroup.get('genres') as FormGroup;
+  }
+
+  private setupGenreFormControls(): void {
+    if (this.genreList && this.genreList.length) {
+      this.genreList.forEach((genre: GenreType) => this.genresFormGroup.addControl(genre, new FormControl(false)));
+    }
+  }
+
+  /**
+   * This is made on purpose that provided search filters on are being remembered by app. When user navigates through
+   * movies, and then return to list page the filters in state that user sets will be unchanged. Filters are stored
+   * in application store.
+   */
+  private patchSearchFormWithValuesFromStore(): void {
+    this.movieListSearchStoreFacade.searchCriteria$
+      .pipe(
+        take(1),
+        takeUntil(this.destroySubject)
+      )
+      .subscribe((searchCriteria: MovieListSearchFormData) => this.formGroup.patchValue(searchCriteria));
+  }
+
+  /**
+   * This is the place where form group values are being provided to store.
+   */
+  private handleFormValueChanges(): void {
+    this.formGroup.valueChanges
+      .pipe(
+        takeUntil(this.destroySubject)
+      )
+      .subscribe((searchCriteria: MovieListSearchFormData) => this.movieListSearchStoreFacade.setSearchCriteria(searchCriteria));
   }
 }

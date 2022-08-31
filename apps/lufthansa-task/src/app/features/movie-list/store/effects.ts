@@ -17,6 +17,10 @@ export class MovieListStoreEffects {
     )
   );
 
+  /**
+   * Genres can be easily extracted form GenreType enum, but I decided to do this more interesting way. This if of
+   * course not optimal but it is demonstration of how effects works in Angular application.
+   */
   public generateGenresList$ = createEffect(() =>
     this.actions$.pipe(
       ofType(setMovieListAction),
